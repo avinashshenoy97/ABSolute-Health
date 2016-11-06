@@ -1,0 +1,38 @@
+body {
+	background-image: url("images/stats/background.png");
+}
+
+#subnav {
+	width : 20%;
+	position : absolute;
+	margin-top: 39px;
+	margin-left: 40%;
+	padding: 0px;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+	margin-top: 45px;
+	margin-bottom: 20px;
+	font-size: 60px;
+}
+
+.bodydivs {
+	float: left;
+	width: 50%;
+}
+
+.bodydivs * {
+	margin: 5px 0px 5px 5px;
+}
+
+label {
+	color: white;
+	display: block;
+}
+
+#addex {
+	border: 2px solid white;
+	color: white;
+}

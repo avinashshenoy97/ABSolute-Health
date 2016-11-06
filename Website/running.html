@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Running</title>
+		<link rel="stylesheet" type="text/css" href="home.css">
+		<link rel="stylesheet" type="text/css" href="running.css">
+	</head>
+
+	<body>
+		<div id="header">
+			<table>
+				<tr>
+					<td class="navmenu"> 
+						<a href="home.html"><img src="Logos/logoAT.png" style="height:15%; width:auto; display: block;"/></a>
+					</td>
+					<td class="navmenu">
+						<a> Fitness Evaluation	</a>
+					</td>
+					<td class="navmenu">
+						<a> Nutrition </a>
+					</td>
+					<td class="navmenu">
+						<a> Fitness </a>
+					</td>
+					<td class="navmenu">
+						<a> Health Care </a>
+					</td>
+					<td class="navmenu">
+						<a> Music </a>
+					</td>
+					<td class="navmenu">
+						<a href = "about.html"> About Us </a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="subnavbar">
+				<a href="stats.html"><img src="Images/subnav/stats.png" style="width: 4%; height: auto; margin-left: 40%;"></a>
+				<a href="running.html"><img src="Images/subnav/running.png" style="width: 4%; height: auto; margin-left: 10%;"></a>
+		</div>
+
+		<h1> Organize Your Own Marathon! </h1>
+
+		<div class="mail">
+			<input type="button" value="Add Invite" onclick="addIn(event)" style="margin-left: 0px;" />
+		</div>
+
+		<div class="mail">
+			<center>
+			<textarea rows="10" cols="100" placeholder="Enter a message for your participants! Do not forget to mention all details of the event!"></textarea>
+			</center>
+		</div>
+
+		<input type="button" value="Done" onclick="done(event)" style="display: inline; margin-top: 50px; margin-left: 50%;" />
+
+
+		<script type="text/javascript">
+			function addIn(e) {
+				var p = e.target.parentNode;
+				var i = document.createElement("input");
+				i.size = "40";
+				i.placeholder = "Enter email address";
+				i.className = "to";
+				p.appendChild(i);
+			}
+
+			function done(e) {
+				var to = document.getElementsByClassName("to");
+				var tos = "";
+				for(var i = 0 ; i < to.length ; i++) {
+					if(to[i] != null)
+						tos += to[i].value + ",";
+				}
+
+				var body = document.querySelector("textarea").value;
+				var sbtn = document.createElement("input");
+				sbtn.type = "button";
+				sbtn.value = "Send";
+
+				var a = document.createElement("a");
+				a.href = "mailto:" + tos + "?subject=You are invited to a marathon&body=" + body;
+				a.appendChild(sbtn);
+				sbtn.style = e.target.style;
+				e.target.parentNode.appendChild(a);
+			}
+		</script>
+	</body>
+</html>

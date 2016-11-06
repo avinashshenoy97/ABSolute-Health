@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "home.css">
+		<link rel = "stylesheet" type = "text/css" href = "tdee.css">
+	</head>
+	<body>
+		<div id="header">
+			<table>
+				<tr>
+					<td class="navmenu"> 
+						<a href="home.html"><img src="Logos/logoAT.png" style="height:15%; width:auto; display: block;"/></a>
+					</td>
+					<td class="navmenu">
+						<a> Fitness Evaluation	</a>
+					</td>
+					<td class="navmenu">
+						<a> Nutrition </a>
+					</td>
+					<td class="navmenu">
+						<a> Fitness </a>
+					</td>
+					<td class="navmenu">
+						<a> Health Care </a>
+					</td>
+					<td class="navmenu">
+						<a> Music </a>
+					</td>
+					<td class="navmenu">
+						<a href = "about.html"> About Us </a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="container" style="width:100%">
+			<div style="float:left; width:33%">
+			<form id="form1"/>
+			<label>Sex : <select  class="move" size="1" id="sex"></label>
+			<option>Male</option>
+			<option>Female</option>
+			</select><br><br>
+			<label>Age : <input class="move" type="text" placeholder="Enter your age" id="age"/></label><br><br>
+			<label>Height(in cm) : <input type="text" placeholder="Enter your height" id="height"/></label><br><br>
+			<label>Weight(in kg) : <input type="text" placeholder="Enter your weight" id="weight"/></label><br><br>
+			<label/><input type="radio" name="Activity" id="sed" value="1.2">Sedentary</input><br><br>
+			<label/><input type="radio" name="Activity" id="la" value="1.375">Lightly Active</input><br><br>
+			<label/><input type="radio" name="Activity" id="ma" value="1.55">Moderately Active</input><br><br>
+			<label/><input type="radio" name="Activity" id="va" value="1.725">Very Active</input><br><br>
+			<label/><input type="radio" name="Activity" id="ea" value="1.9">Extremely Active</input><br><br>
+			<center><input type="button" value="Calculate" onclick="bmr_cal()"/></center>
+		</div>
+		<div style="float:left; width:33%" id="divtwo">
+				<h1 id="bmr" style="margin-top:200px">BMR : </h1>
+				<h1 id="tdee">TDEE : </h1>
+		</div>
+		<div style="float:left; width:33%">
+				<h1 id="lose" style="margin-top:180px">LOSE WEIGHT : </h1>
+				<h1 id="maintain">MAINTAIN WEIGHT : </h1>
+				<h1 id="gain">GAIN WEIGHT : </h1>
+		</div>
+		<script>
+		function bmr_cal(){
+			var sex=document.getElementById("sex");
+			var age=document.getElementById("age");
+			var height=document.getElementById("height");
+			var weight=document.getElementById("weight");
+			if(age.value==null||height.value==null||weight.value==null)
+				alert("Enter all the fields");
+			else{
+				if(sex.value=="Female")
+					bmr = 655 + (9.6 * weight.value) + (1.8 * height.value) - (4.7 * age.value);
+				if(sex.value=="Male")
+					bmr = 66 + (13.7 * weight.value) + (5 * height.value) - (6.8 * age.value);
+				document.getElementById("bmr").textContent+=bmr;
+				tdee_cal();
+			}
+		}
+		function tdee_cal(){
+			if (document.getElementById('sed').checked) 
+  				var tdee = parseFloat(document.getElementById('sed').value) * bmr;
+  			if (document.getElementById('la').checked) 
+  				var tdee = parseFloat(document.getElementById('la').value) * bmr;
+  			if (document.getElementById('ma').checked) 
+  				var tdee = parseFloat(document.getElementById('ma').value) * bmr;
+  			if (document.getElementById('va').checked) 
+  				var tdee = parseFloat(document.getElementById('va').value) * bmr;
+  			if (document.getElementById('ea').checked) 
+  				var tdee = parseFloat(document.getElementById('ea').value) * bmr;
+			document.getElementById("tdee").textContent+=tdee;
+			document.getElementById("lose").textContent+=bmr-500;
+			document.getElementById("maintain").textContent+=bmr;
+			document.getElementById("gain").textContent+=bmr+500;
+		}
+		</script>
+		</div>
+	</body>
+</html>

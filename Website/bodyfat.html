@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "home.css">
+		<link rel = "stylesheet" type = "text/css" href = "bodyfat.css">
+	</head>
+	<body>
+		<div id="header">
+			<table>
+				<tr>
+					<td class="navmenu"> 
+						<a href="home.html"><img src="Logos/logoAT.png" style="height:15%; width:auto; display: block;"/></a>
+					</td>
+					<td class="navmenu">
+						<a> Fitness Evaluation	</a>
+					</td>
+					<td class="navmenu">
+						<a> Nutrition </a>
+					</td>
+					<td class="navmenu">
+						<a> Fitness </a>
+					</td>
+					<td class="navmenu">
+						<a> Health Care </a>
+					</td>
+					<td class="navmenu">
+						<a> Music </a>
+					</td>
+					<td class="navmenu">
+						<a href = "about.html"> About Us </a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="container" style="width:100%">
+		<div style="float:left; width:33%">
+			<form id="form1"/>
+			<label>Sex : <select  class="move" size="1" id="sex"></label>
+			<option>Male</option>
+			<option>Female</option>
+			</select><br><br>
+			<label>Age : <input class="move" type="text" placeholder="Enter your age" id="age"/></label><br><br>
+			<label>Height(in cm) : <input type="text" placeholder="Enter your height" id="height"/></label><br><br>
+			<label>Weight(in kg) : <input type="text" placeholder="Enter your weight" id="weight"/></label><br><br>
+			<center><input type="button" value="Calculate" onclick="bfp_cal()"/></center>
+		</div>
+		<div style="float:left; width:33%" id="divtwo">
+				<h1 id="bfp" style="margin-top:50px">BFP : </h1>
+		</div>
+		<div style="float:left; width:33%">
+				<table id="tablefat" style="border:1px solid white; border-spacing:0; margin-left:80px; margin-top:80px">
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Type of Fat </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> Women </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> Men </h3>
+					</td>
+				</tr>
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Essential Fat </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> < 10 - 13 % </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> < 2 - 5 % </h3>
+					</td>
+				</tr>
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Athletes </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> 14 - 20 % </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> 6 - 13 % </h3>
+					</td>
+				</tr>
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Fitness </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> 21 - 24 % </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> 14 - 17 % </h3>
+					</td>
+				</tr>
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Average </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> 25 - 31 % </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> 18 - 24 % </h3>
+					</td>
+				</tr>
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Overweight or Obese </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> >32 % </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> >25 % </h3>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<script>
+		function bfp_cal(){
+			var sex=document.getElementById("sex");
+			var age=document.getElementById("age");
+			var height=document.getElementById("height");
+			var weight=document.getElementById("weight");
+			var hone=document.createElement("h1");
+			hone.setAttribute("id","hone");
+			divtwo.appendChild(hone);
+			if(age.value==null||height.value==null||weight.value==null)
+				alert("Enter all the fields");
+			else{
+					bmi = weight.value/Math.pow((height.value/100),2);
+					if(parseInt(age.value)<18 && sex.value=="Male")
+						bfp = (1.51 * bmi) - (0.70 * age.value) - (3.6 * 1) + 1.4;
+					else if(parseInt(age.value)<18 && sex.value=="Female")
+						bfp = (1.51 * bmi) - (0.70 * age.value) - (3.6 * 0) + 1.4;
+					else if(parseInt(age.value)>=18 && sex.value=="Male")
+						bfp = (1.20 * bmi) + (0.23 * age.value) - (10.8 * 1) - 5.4;
+					else
+						bfp = (1.20 * bmi) + (0.23 * age.value) - (10.8 * 0) - 5.4;
+					document.getElementById("bfp").textContent+=bfp;
+			}
+		}
+		</script>
+		</div>
+	</body>
+</html>

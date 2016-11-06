@@ -1,0 +1,26 @@
+body {
+	background-image: url("Images/running/background.png");
+}
+
+#subnavbar {
+	background-color: rgba(20, 20, 20, 0.75);
+	margin-top: 47px;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+	font-size: 50px;
+	margin-top: 0px;
+}
+
+input {
+	position: static;
+	margin-left: 25%;
+	display: block;
+}
+
+.mail {
+	float: left;
+	width: 50%;
+}

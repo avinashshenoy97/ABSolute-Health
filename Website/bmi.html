@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "home.css">
+		<link rel = "stylesheet" type = "text/css" href = "bmi.css">
+	</head>
+	<body>
+		<div id="header">
+			<table>
+				<tr>
+					<td class="navmenu"> 
+						<a href="home.html"><img src="Logos/logoAT.png" style="height:15%; width:auto; display: block;"/></a>
+					</td>
+					<td class="navmenu">
+						<a> Fitness Evaluation	</a>
+					</td>
+					<td class="navmenu">
+						<a> Nutrition </a>
+					</td>
+					<td class="navmenu">
+						<a> Fitness </a>
+					</td>
+					<td class="navmenu">
+						<a> Health Care </a>
+					</td>
+					<td class="navmenu">
+						<a> Music </a>
+					</td>
+					<td class="navmenu">
+						<a href = "about.html"> About Us </a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="container" style="width:100%">
+			<div style="float:left; width:33%">
+			<form id="form1"/>
+			<label>Height(in cm) : <input type="text" placeholder="Enter your height" id="height"/></label><br><br>
+			<label>Weight(in kg) : <input type="text" placeholder="Enter your weight" id="weight"/></label><br><br>
+			<center><input type="button" value="Calculate" onclick="bmi_cal()"/></center>
+		</div>
+		<div style="float:left; width:33%" id="divtwo">
+				<h1 id="bmi" style="margin-top:60px">BMI : </h1>
+		</div>
+		<div style="float:left; width:33%">
+				<table id="tableweights" style="border:1px solid white; border-spacing:0; margin-left:100px; margin-top:60px">
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Weight Categories </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> BMI (kg/metre square) </h3>
+					</td>
+				</tr>
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Underweight </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3> < 18.5 </h3>
+					</td>
+				</tr>
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Healthy Weight </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3><font color="green"> 18.5 - 24.9 </font></h3>
+					</td>
+				</tr>
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Overweight </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3><font color="yellow"> 25 - 29.9 </font></h3>
+					</td>
+				</tr>
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Obese </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3><font color="orange"> 30 - 34.9 </font></h3>
+					</td>
+				</tr>
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Severely Obese </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3><font color="red"> 35 - 39.9 </font></h3>
+					</td>
+				</tr>
+				<tr>
+					<td style ="border:1px solid white">
+						<h3> Morbidly Obese </h3>
+					</td>
+					<td style ="border:1px solid white">
+						<h3><font color="purple"> >= 40 </font></h3>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<script>
+		function bmi_cal(){
+			var height=document.getElementById("height");
+			var weight=document.getElementById("weight");
+			var hone=document.createElement("h1");
+			hone.setAttribute("id","hone");
+			divtwo.appendChild(hone);
+			if(height.value==null||weight.value==null)
+				alert("Enter all the fields");
+			else{
+					bmi = weight.value/Math.pow((height.value/100),2);
+					document.getElementById("bmi").textContent+=bmi;
+					if(bmi<18.5)
+						document.getElementById("hone").textContent="Under Weight";
+					else if(bmi<24.9)
+						document.getElementById("hone").textContent="Healthy Weight";
+					else if(bmi<29.9)
+						document.getElementById("hone").textContent="Over Weight";
+					else if(bmi<34.9)
+						document.getElementById("hone").textContent="Obese";
+					else if(bmi<39.9)
+						document.getElementById("hone").textContent="Severely Obese";
+					else
+						document.getElementById("hone").textContent="Morbidly Obese";
+			}
+		}
+		</script>
+		</div>
+	</body>
+</html>

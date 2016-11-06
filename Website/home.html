@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "home.css">
+
+	</head>
+	<body>
+		<div id="header">
+			<table>
+				<tr>
+					<td class="navmenu"> 
+						<a href="home.html"><img src="Logos/logoAT.png" style="height:15%; width:auto; display: block;"/></a>
+					</td>
+					<td class="navmenu">
+						<a href="Images/constr.jpg"> Fitness Evaluation	</a>
+					</td>
+					<td class="navmenu">
+						<a href="Images/constr.jpg"> Nutrition </a>
+					</td>
+					<td class="navmenu">
+						<a href="Images/constr.jpg"> Fitness </a>
+					</td>
+					<td class="navmenu">
+						<a href="Images/constr.jpg"> Health Care </a>
+					</td>
+					<td class="navmenu">
+						<a href="Images/constr.jpg"> Music </a>
+					</td>
+					<td class="navmenu">
+						<a href = "about.html"> About Us </a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="slidy-container">
+			  <figure id="slidy" style="margin-left: auto; margin-right: auto; z-index: -1;">
+			    <img src="Images/home/namelogo.png" class="slides" width="5%">
+			    <img src="Images/home/nutrition.png" class="slides" width="5%">
+			    <img src="Images/home/fitness.png" class="slides" width="5%">
+			  </figure>
+			  <figure id="navslides" style="z-index: 0;">
+				  <img src="Images/home/namelogo.png" style="display: none;" class="slides">
+				  <img src="Images/home/nutrition.png" style="display: none;" class="slides">
+				  <img src="Images/home/fitness.png" style="display: none;" class="slides">
+				</figure>
+
+			  <a class='w3-btn-floating buttons' style="left: 5px;" onclick="endshow(-1);">&#10094;</a>
+			  <a class='w3-btn-floating buttons' style="right: 5px;" onclick="endshow(1);">&#10095;</a>
+			  <script src = "slide.js"></script>
+		</div>
+		
+		<div id="belowshow">
+			<div><a href="Images/constr.jpg"> <img src="Images/home/signup_block.png" class="tiles" id="lefttile"> </a></div>
+			<div><a href="Images/constr.jpg"> <img src="Images/home/musictile.png" class="tiles"> </a></div>
+			<div><a href="Images/constr.jpg"> <img src="Images/home/stats_tile.png" class="tiles"> </a></div>
+			<div><a href = "https://www.google.co.in/maps/search/gym/"> <img src="Images/home/maps_tile.png" class="tiles" id="righttiles"> </a></div>
+		</div>
+		<div id = "footer">
+			<h6 style = "font-weight : 500;margin-left : 160px;font-size : 10pt; margin-top : 10px;margin-bottom : 0; padding-top : 10px;">In partnership with</h6>
+			<center><img style = "width : 80% ; height : 80%; padding : 0; margin-top  :0;"src = "Images/home/logos.png"></center>
+			<table id = "foottable">
+				<tr>
+					<td>
+						|
+					</td>
+					<td> 
+						Copyright © 2016 AbsoluteHealth Inc. All rights reserved.
+					</td>
+					<td>
+						|
+					</td>
+					<td >
+						<a class = "footfont">Privacy Policy</a>
+					</td>
+					<td>
+						|
+					</td>
+					<td >
+						<a class = "footfont">Terms and Conditions</a>
+					</td>
+					<td>
+						|
+					</td>
+					<td >
+						<a class = "footfont">Contact Us</a>
+					</td>
+					<td>
+						|
+					</td>
+					<td class = "footcells" >
+						<a class = "footfont">Send Feedback</a>
+					</td>
+					<td>
+						|
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

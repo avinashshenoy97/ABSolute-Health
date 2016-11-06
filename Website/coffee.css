@@ -1,0 +1,12 @@
+body {
+	background-image: url("images/coffee/background.jpg");
+}
+
+.comic {
+	margin-top: 20px;
+}
+
+#footer {
+	position: absolute;
+	top: 4510px;
+}

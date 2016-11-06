@@ -1,0 +1,32 @@
+#subnav {
+	width : 20%;
+	position : absolute;
+	margin-top: 39px;
+	margin-left: 40%;
+	padding: 0px;
+}
+#form1{
+	margin-top : 0px;
+	padding : 10px;
+}
+#container{
+	margin-top : 50px;
+}
+h1,h3{
+	text-align : center;
+	color: rgb(240,240,240);
+}
+body { 
+	background-image: url('Images/About/pesu.png');
+    background-attachment: fixed;
+    background-size: cover;
+}
+label{
+	color: rgb(240,240,240);
+}
+.move{
+	margin-left : 65px;
+}
+#form1{
+	margin-top : 50px;
+}
