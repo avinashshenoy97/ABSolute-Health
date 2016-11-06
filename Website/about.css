@@ -23,6 +23,10 @@ td.navmenu {
 	width: 13.5%;
 	text-align: center;
 }
+#subnavbar {
+	background-color: rgba(20, 20, 20, 0.75);
+	margin-top: 47px;
+}
 table{
 	border-spacing: 60px 0px;
 }

@@ -1,0 +1,72 @@
+#logincontainer{
+	margin-top: 39px;
+	width : 100%;
+	height : 100%;
+	position: absolute;
+	padding: 0px;
+	left: 0px;
+	right: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+img.login{
+	width :100%;
+	height : 100%;
+	overflow: hidden;
+}
+
+#footer{
+	background-color: rgb(220,220,220);
+	height: 340px;
+	width: 100%;
+	margin: 0;
+	left: 0px;
+	padding-left: 0px;
+	padding-right: 20px;
+	font-color : rgb(0,0,0);
+}
+
+input:required {
+	border: 1px solid red;
+}
+
+label {
+	padding : 10px;
+}
+
+input {
+	height: 30px;
+	width : 100%;
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 20px;
+	margin: 10px;
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+}
+
+#submit {
+	height : 30px;
+	width : 200px;
+}
+
+input:focus { 
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+}
+
+form {
+	position: absolute;
+	height : 40%;
+	width : 350px;
+	margin-left: 26em;
+	margin-top : 3em;
+	font-size: 20px;
+	color: white;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}

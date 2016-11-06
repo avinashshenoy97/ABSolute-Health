@@ -1,3 +1,7 @@
+#subnavbar {
+	background-color: rgba(20, 20, 20, 0.75);
+	margin-top: 47px;
+}
 body {
 	background-image: url("images/coffee/background.jpg");
 }

@@ -1,9 +1,6 @@
-#subnav {
-	width : 20%;
-	position : absolute;
-	margin-top: 39px;
-	margin-left: 40%;
-	padding: 0px;
+#subnavbar {
+	background-color: rgba(20, 20, 20, 0.75);
+	margin-top: 47px;
 }
 #form1{
 	margin-top : 0px;
