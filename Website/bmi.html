@@ -38,14 +38,15 @@
 		</div>
 		<div id="container" style="width:100%">
 			<div style="float:left; width:33%">
-			<form id="form1"/>
-			<label>Height(in cm) : <input type="text" placeholder="Enter your height" id="height"/></label><br><br>
-			<label>Weight(in kg) : <input type="text" placeholder="Enter your weight" id="weight"/></label><br><br>
-			<center><input type="button" value="Calculate" onclick="bmi_cal()"/></center>
-		</div>
-		<div style="float:left; width:33%" id="divtwo">
+				<form id="form1"/>
+				<input type="text" placeholder="Enter your height (in cm) " id="height"/><br><br>
+				<input type="text" placeholder="Enter your weight (in kg) " id="weight"/><br><br>
+				<center><input type="button" value="Calculate" onclick="bmi_cal()"/></center>
+			</div>
+			<div style="float:left; width:33%" id="divtwo">
 				<h1 style="margin-top:60px">BMI : </h1>
 				<h1 id="bmi"></h1>
+			</div>
 		</div>
 		<div style="float:left; width:33%">
 				<table id="tableweights" style="border:1px solid white; border-spacing:0; margin-left:100px; margin-top:60px">
@@ -107,15 +108,22 @@
 				</tr>
 			</table>
 		</div>
+		<div id = "info">
+			<p>Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.The BMI is an attempt to quantify the amount of tissue mass (muscle, fat, and bone) in an individual, and then categorize that person as underweight, normal weight, overweight, or obese based on that value.</p>
+		</div>
 		<script>
 		function bmi_cal(){
 			var height=document.getElementById("height");
+			height.addEventListener("blur",check,false);
 			var weight=document.getElementById("weight");
+			weight.addEventListener("blur",check,false);
 			var hone=document.createElement("h1");
 			hone.setAttribute("id","hone");
 			divtwo.appendChild(hone);
-			if(height.value==null||weight.value==null)
-				alert("Enter all the fields");
+			if(height.value=="")
+				alert("Height field cannot be empty");
+			else if(weight.value=="")
+				alert("Weight field cannot be empty");
 			else{
 					bmi = weight.value/Math.pow((height.value/100),2);
 					bmi = Math.round(bmi * 100)/100;
@@ -144,6 +152,12 @@
 						htag.style.color = "purple";
 					}
 			}
+			function check(e){
+				if(isNaN(e.target.value)){
+				alert("Should be a number. Please re-enter!");
+				e.target.value = " ";
+			}
+		}
 		}
 		</script>
 		</div>

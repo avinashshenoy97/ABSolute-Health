@@ -7,7 +7,7 @@ for( i = 0 ; i < tableimgs.length ; i++){
 }
 
 function enlarge(e){
-	var i = ["Images/songs/work_music.png","Images/songs/work_music.png","Images/songs/dance_music-3.png"];
+	var i = ["Images/songs/work_music.png","Images/songs/relax_m.png","Images/songs/dance_music-3.png"];
 	var im = document.createElement("img");
 	if(e.target.id == "img1" || e.target.id == "img2" || e.target.id == "img3"){
 		e.target.parentNode.parentNode.remove();

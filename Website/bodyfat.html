@@ -43,13 +43,13 @@
 			<option>Male</option>
 			<option>Female</option>
 			</select><br><br>
-			<label>Age : <input class="move" type="text" placeholder="Enter your age" id="age"/></label><br><br>
-			<label>Height(in cm) : <input type="text" placeholder="Enter your height" id="height"/></label><br><br>
-			<label>Weight(in kg) : <input type="text" placeholder="Enter your weight" id="weight"/></label><br><br>
+			<input type="text" placeholder="Enter your age" id="age"/><br><br>
+			<input type="text" placeholder="Enter your height (in cm)" id="height"/><br><br>
+			<input type="text" placeholder="Enter your weight (in kg)" id="weight"/><br><br>
 			<center><input type="button" value="Calculate" onclick="bfp_cal()"/></center>
 		</div>
 		<div style="float:left; width:33%" id="divtwo">
-				<h1 style="margin-top:50px">BFP : </h1>
+				<h1 style="margin-top:50px">Body Fat Percentage : </h1>
 				<h1 id="bfp"></h1>
 		</div>
 		<div style="float:left; width:33%">
@@ -126,13 +126,20 @@
 		function bfp_cal(){
 			var sex=document.getElementById("sex");
 			var age=document.getElementById("age");
+			age.addEventListener("blur",check,false);
 			var height=document.getElementById("height");
+			height.addEventListener("blur",check,false);
 			var weight=document.getElementById("weight");
+			weight.addEventListener("blur",check,false);
 			var hone=document.createElement("h1");
 			hone.setAttribute("id","hone");
 			divtwo.appendChild(hone);
-			if(age.value==null||height.value==null||weight.value==null)
-				alert("Enter all the fields");
+			if(age.value=="")
+				alert("Age field cannot be empty");
+			else if(height.value=="")
+				alert("Height field cannot be empty");
+			else if(weight.value=="")
+				alert("Weight field cannot be empty");
 			else{
 					bmi = weight.value/Math.pow((height.value/100),2);
 					if(parseInt(age.value)<18 && sex.value=="Male")
@@ -143,8 +150,14 @@
 						bfp = (1.20 * bmi) + (0.23 * age.value) - (10.8 * 1) - 5.4;
 					else
 						bfp = (1.20 * bmi) + (0.23 * age.value) - (10.8 * 0) - 5.4;
-					document.getElementById("bfp").textContent=bfp;
+					document.getElementById("bfp").textContent=Math.round(bfp * 100) / 100;
 			}
+			function check(e){
+				if(isNaN(e.target.value)){
+				alert("Should be a number. Please re-enter!");
+				e.target.value = " ";
+	}
+}
 		}
 		</script>
 		</div>

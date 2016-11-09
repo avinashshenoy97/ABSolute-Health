@@ -42,16 +42,16 @@
 		<h1> Organize Your Own Marathon! </h1>
 
 		<div class="mail">
-			<input type="button" value="Add Invite" onclick="addIn(event)" style="margin-left: 0px;" />
+			<input type="button" class = "btn" value="Add Invite" onclick="addIn(event)" style="margin-left: 10px;" />
 		</div>
 
 		<div class="mail">
 			<center>
-			<textarea rows="10" cols="100" placeholder="Enter a message for your participants! Do not forget to mention all details of the event!"></textarea>
+			<textarea rows="10" cols="80" placeholder="Enter a message for your participants! Do not forget to mention all details of the event!"></textarea>
 			</center>
 		</div>
 
-		<input type="button" value="Done" onclick="done(event)" style="display: inline; margin-top: 50px; margin-left: 50%;" />
+		<input type="button" class = "btn" value="Done" onclick="done(event)" style="position : absolute; display: inline; margin-top: 200px; margin-left: 738px;" />
 
 
 		<script type="text/javascript">
@@ -76,6 +76,7 @@
 				var sbtn = document.createElement("input");
 				sbtn.type = "button";
 				sbtn.value = "Send";
+				sbtn.setAttribute("class","btn");
 
 				var a = document.createElement("a");
 				a.href = "mailto:" + tos + "?subject=You are invited to a marathon&body=" + body;

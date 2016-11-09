@@ -38,46 +38,65 @@
 		</div>
 		<div id="container" style="width:100%">
 			<div style="float:left; width:33%">
-			<form id="form1"/>
-			<label>Sex : <select  class="move" size="1" id="sex"></label>
-			<option>Male</option>
-			<option>Female</option>
-			</select><br><br>
-			<label>Age : <input class="move" type="text" placeholder="Enter your age" id="age"/></label><br><br>
-			<label>Height(in cm) : <input type="text" placeholder="Enter your height" id="height"/></label><br><br>
-			<label>Weight(in kg) : <input type="text" placeholder="Enter your weight" id="weight"/></label><br><br>
-			<label/><input type="radio" name="Activity" id="sed" value="1.2">Sedentary</input><br><br>
-			<label/><input type="radio" name="Activity" id="la" value="1.375">Lightly Active</input><br><br>
-			<label/><input type="radio" name="Activity" id="ma" value="1.55">Moderately Active</input><br><br>
-			<label/><input type="radio" name="Activity" id="va" value="1.725">Very Active</input><br><br>
-			<label/><input type="radio" name="Activity" id="ea" value="1.9">Extremely Active</input><br><br>
-			<center><input type="button" value="Calculate" onclick="bmr_cal()"/></center>
+				<form id="form1">
+					<label>Sex : <select  class="move" size="1" id="sex"></label>
+					<option>Male</option>
+					<option>Female</option>
+					</select><br><br>
+					<input class="move" type="text" placeholder="Enter your age" id="age"/><br><br>
+					<input type="text" placeholder="Enter your height (in cm)" id="height"/><br><br>
+					<input type="text" placeholder="Enter your weight (in kg)" id="weight"/><br><br>
+					<input type="radio" class = "adjust" name="Activity" id="sed" value="1.2" checked="checked">Sedentary</input><br><br>
+					<input type="radio" class = "adjust" name="Activity" id="la" value="1.375">Lightly Active</input><br><br>
+					<input type="radio" class = "adjust" name="Activity" id="ma" value="1.55">Moderately Active</input><br><br>
+					<input type="radio" class = "adjust" name="Activity" id="va" value="1.725">Very Active</input><br><br>
+					<input type="radio" class = "adjust" name="Activity" id="ea" value="1.9">Extremely Active</input><br><br>
+					<center><input type="button" value="Calculate" onclick="bmr_cal()"/></center><br><br>
+				</form>
+			</div>
+			<div style="float:left; width:33%" id="divtwo">
+					<h1>BMR : </h1>
+					<h1 id="bmr"></h1>
+					<br/>
+					<h1>TDEE : </h1>
+					<h1 id="tdee"></h1>
+			</div>
+			<div style="float:left; width:33%">
+					<h1 >LOSE WEIGHT : </h1>
+					<h1 id="lose"></h1>
+					<br/>
+					<h1>MAINTAIN WEIGHT : </h1>
+					<h1 id="maintain"></h1>
+					<br/>
+					<h1>GAIN WEIGHT : </h1>
+					<h1 id="gain"></h1>
+			</div>
 		</div>
-		<div style="float:left; width:33%" id="divtwo">
-				<h1>BMR : </h1>
-				<h1 id="bmr"></h1>
-				<br/>
-				<h1>TDEE : </h1>
-				<h1 id="tdee"></h1>
-		</div>
-		<div style="float:left; width:33%">
-				<h1 >LOSE WEIGHT : </h1>
-				<h1 id="lose"></h1>
-				<br/>
-				<h1>MAINTAIN WEIGHT : </h1>
-				<h1 id="maintain"></h1>
-				<br/>
-				<h1>GAIN WEIGHT : </h1>
-				<h1 id="gain"></h1>
+		<div id = "info">
+			<p>What is TDEE?<br>
+				TDEE (Total Daily Energy Expenditure) is the amount of calories that your body will burn in a 24-hour period. It factors in your sleep, work, exercise, and normal daily activity.<br><br>
+
+				TDEE is important, because it helps us know how many calories we should consume based on various goals. Whether you want to gain muscle, burn fat, or maintain your current weight.<br><br>
+
+				Use our simple TDEE calculator, and we'll do the math for you!<br><br>
+				What is BMR ? <br>
+				Basal metabolic rate (BMR) is the amount of energy expended while at rest in a neutrally temperate environment, in the post-absorptive state.</p>
 		</div>
 		<script>
 		function bmr_cal(){
 			var sex=document.getElementById("sex");
 			var age=document.getElementById("age");
+			age.addEventListener("blur",check,false);
 			var height=document.getElementById("height");
+			height.addEventListener("blur",check,false);
 			var weight=document.getElementById("weight");
-			if(age.value==null||height.value==null||weight.value==null)
-				alert("Enter all the fields");
+			weight.addEventListener("blur",check,false);
+			if(age.value=="")
+				alert("Age field cannot be empty");
+			else if(height.value=="")
+				alert("Height field cannot be empty");
+			else if(weight.value=="")
+				alert("Weight field cannot be empty");
 			else{
 				if(sex.value=="Female")
 					bmr = 655 + (9.6 * weight.value) + (1.8 * height.value) - (4.7 * age.value);
@@ -87,6 +106,12 @@
 				document.getElementById("bmr").textContent=bmr;
 				tdee_cal();
 			}
+			function check(e){
+				if(isNaN(e.target.value)){
+				alert("Should be a number. Please re-enter!");
+				e.target.value = " ";
+			}
+		}
 		}
 		function tdee_cal(){
 			if (document.getElementById('sed').checked) 

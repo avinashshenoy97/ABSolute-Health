@@ -8,6 +8,8 @@ function show(e){
 	var choice = e.target.id;
 	var img = e.target;
 	if(choice == "login"){
+		var rem = document.getElementById("subnavbar");
+		rem.remove();
 		var f = document.createElement("form");
 		f.setAttribute("method","post");
 		f.setAttribute("action","login.php");
@@ -30,13 +32,15 @@ function show(e){
 		tb3.setAttribute("name","weight");
 		tb3.setAttribute("id","w");
 		tb3.setAttribute("required","required");
+		var cen = document.createElement("center");
 		var sub = document.createElement("input");
 		sub.setAttribute("type","submit");
 		sub.setAttribute("id","submit");
 		f.appendChild(tb1);
 		f.appendChild(tb2);
 		f.appendChild(tb3);
-		f.appendChild(sub);
+		cen.appendChild(sub);
+		f.appendChild(cen);
 		ims = document.getElementById("logincontainer");
 		while(ims.firstChild){
 			ims.firstChild.remove();
@@ -49,6 +53,8 @@ function show(e){
 		valpwd.addEventListener("blur",checkpwd,false);
 	}
 	if(choice == "signup"){
+		var rem = document.getElementById("subnavbar");
+		rem.remove();
 		var f = document.createElement("form");
 		f.setAttribute("method","post");
 		f.setAttribute("action","signup.php");
@@ -77,6 +83,7 @@ function show(e){
 		tb3.setAttribute("name","weight");
 		tb3.setAttribute("id","w");
 		tb3.setAttribute("required","required");
+		var cen = document.createElement("center");
 		var sub = document.createElement("input");
 		sub.setAttribute("type","submit");
 		sub.setAttribute("id","submit");
@@ -84,7 +91,8 @@ function show(e){
 		f.appendChild(tb2);
 		f.appendChild(tbc);
 		f.appendChild(tb3);
-		f.appendChild(sub);
+		cen.appendChild(sub);
+		f.appendChild(cen);
 		ims = document.getElementById("logincontainer");
 		while(ims.firstChild){
 			ims.firstChild.remove();

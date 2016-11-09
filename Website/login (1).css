@@ -5,6 +5,7 @@
 	position: absolute;
 	padding: 0px;
 	left: 0px;
+	z-index: 1;
 	right: 0px;
 	margin-right: 0px;
 	margin-left: 0px;
@@ -69,4 +70,25 @@ form {
 	font-size: 20px;
 	color: white;
 	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+#subnavbar {
+	z-index: 10;
+	position: absolute;
+	background-color: rgba(20, 20, 20, 0.75);
+	margin-top: 39px;
+	margin-bottom: 0px;
+	width : 100%;
+	height : auto;
+	padding: 0px;
+	margin-right: 0px;
+}
+
+h1{
+	padding: 0px;
+	text-align: center;
+	height :100%;
+	font-size: 30px;
+	color: white;
+	font-family: 'Open Sans', Helvetica, sans-serif;
 }

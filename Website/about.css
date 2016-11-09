@@ -2,7 +2,7 @@ html, body {
 	padding: 0;
 }
 #header {
-	background-color: rgba(0, 0, 0, 0.85); //make little gray and less opacity
+	background-color: rgba(0, 0, 0, 0.85); 
 	height: 55px;
 	width: 100%;
 	top: 0px;
